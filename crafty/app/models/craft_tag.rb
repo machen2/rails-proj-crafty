@@ -1,0 +1,2 @@
+class CraftTag < ApplicationRecord
+end

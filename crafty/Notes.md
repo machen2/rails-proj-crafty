@@ -23,7 +23,7 @@ Attributes
   title:String
   difficulty:String (easy, medium, hard)
   description:String
-  image:
+  image: --> add in later
   instructions:String
 
 Tag Model
