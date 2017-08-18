@@ -2,6 +2,17 @@
 <hr>
 
 <%= form_for @craft do |f| %>
+  <% if @craft.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@craft.errors.count, "error") %> prohibited this craft from being created:</h3>
+      <ul>
+        <% @craft.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="form-fields">
     <%= f.label :title %>
     <%= f.text_field :title %>
