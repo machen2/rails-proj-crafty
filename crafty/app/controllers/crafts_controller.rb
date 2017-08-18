@@ -27,7 +27,7 @@ class CraftsController < ApplicationController
     if @craft.update(craft_params)
       redirect_to craft_path(@craft)
     else
-      redirect_to edit_craft_path(@craft)
+      redirect_to edit_craft_path(@craft) #####
     end
   end
 
