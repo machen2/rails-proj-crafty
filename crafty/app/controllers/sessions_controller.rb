@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
   def new
+    if is_logged_in?
+      redirect_to crafts_path
+    end
   end
 
   def create
@@ -8,6 +11,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to crafts_path
     else
+      @user.nil? ? (flash[:error] = "Email is Invalid") : (flash[:error] = "Password is Invalid")
       render "sessions/new"
     end
   end
