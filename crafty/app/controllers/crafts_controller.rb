@@ -18,6 +18,19 @@ class CraftsController < ApplicationController
     end
   end
 
+  def edit
+    @craft = Craft.find_by(params[:id])
+  end
+
+  def update
+    @craft = Craft.find_by(params[:id])
+    if @craft.update(craft_params)
+      redirect_to craft_path(@craft)
+    else
+      redirect_to edit_craft_path(@craft)
+    end
+  end
+
   def show
     @craft = Craft.find_by(id: params[:id])
   end
