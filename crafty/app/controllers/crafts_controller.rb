@@ -37,10 +37,6 @@ class CraftsController < ApplicationController
     @craft = Craft.find_by(id: params[:id])
   end
 
-  def destroy
-    redirect_if_not_author
-  end
-
   private
     def craft_params
       params.require(:craft).permit(:title, :difficulty, :description, :instructions)

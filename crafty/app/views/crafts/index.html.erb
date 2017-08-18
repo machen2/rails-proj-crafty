@@ -1,11 +1,9 @@
-<h1>Crafts Index Page Here</h1>
-
-<p>Welcome, <%= current_user.name %>!</p>
-<p>All Crafts:</p>
+<h2>All Crafts</h2>
+<hr>
 
 <% @crafts.each do |craft| %>
   <h3><%= craft.title %> | <%= link_to "View", craft_path(craft) %></h3>
-<% end %>
+<% end %><br>
 
 
 <%= link_to "Log Out", logout_path %> | <%= link_to "Create a New Craft", new_craft_path %>
