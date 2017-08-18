@@ -10,7 +10,7 @@ class RegistrationsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to crafts_path
     else
-      render signup_path
+      render "registrations/new"
     end
   end
 
