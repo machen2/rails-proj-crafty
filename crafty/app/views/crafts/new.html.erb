@@ -1,0 +1,27 @@
+<h2>Create a New Craft</h2>
+<hr>
+
+<%= form_for @craft do |f| %>
+  <div class="form-fields">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div><br>
+
+  <div class="form-fields">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div><br>
+
+  <div class="form-fields">
+    <%= f.label :difficulty %>
+    <em>(Difficulty must be 'easy', 'medium', or 'hard'.)</em>
+    <%= f.text_field :difficulty %>
+  </div><br>
+
+  <div class="form-fields">
+    <%= f.label :instructions %><br>
+    <%= f.text_area :instructions %>
+  </div><br>
+
+  <%= f.submit "Create" %>
+<% end %>
