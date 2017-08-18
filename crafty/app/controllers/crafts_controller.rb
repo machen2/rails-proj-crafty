@@ -20,10 +20,12 @@ class CraftsController < ApplicationController
 
   def edit
     @craft = Craft.find_by(params[:id])
+    redirect_if_not_author
   end
 
   def update
     @craft = Craft.find_by(params[:id])
+    redirect_if_not_author
     if @craft.update(craft_params)
       redirect_to craft_path(@craft)
     else
@@ -33,6 +35,10 @@ class CraftsController < ApplicationController
 
   def show
     @craft = Craft.find_by(id: params[:id])
+  end
+
+  def destroy
+    redirect_if_not_author
   end
 
   private
