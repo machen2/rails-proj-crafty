@@ -4,7 +4,7 @@
 <p>All Crafts:</p>
 
 <% @crafts.each do |craft| %>
-  <h3><%= link_to craft.title, crafts_path(craft) %></h3>
+  <h3><%= craft.title %> | <%= link_to "View", craft_path(craft) %></h3>
 <% end %>
 
 

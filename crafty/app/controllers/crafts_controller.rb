@@ -18,6 +18,10 @@ class CraftsController < ApplicationController
     end
   end
 
+  def show
+    @craft = Craft.find_by(id: params[:id])
+  end
+
   private
     def craft_params
       params.require(:craft).permit(:title, :difficulty, :description, :instructions)

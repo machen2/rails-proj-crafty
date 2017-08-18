@@ -1,0 +1,12 @@
+<h2><%= @craft.title %></h2>
+<hr>
+
+<p><strong>Description: </strong><%= @craft.description %></p>
+
+<p><strong>Level of Difficulty: </strong><%= @craft.difficulty %></p>
+
+<p><strong>Instructions: </strong></p>
+<p><%= @craft.instructions %></p>
+<br>
+
+<%= link_to "Log Out", logout_path %> | <%= link_to "Home", crafts_path %>
