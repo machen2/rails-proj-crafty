@@ -6,5 +6,8 @@ class RegistrationsController < ApplicationController
 
   def create
     @user = User.new
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to crafts_path
   end
 end
