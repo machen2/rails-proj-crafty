@@ -1,4 +1,10 @@
 <h2>Edit a Craft</h2>
 <hr>
 
+<% if alert %>
+  <div id="notice" class="alert">
+    <p class="alert"><%= alert %></p>
+  </div>
+<% end %>
+
 <%= render 'crafts/form', craft: @craft, user: current_user %>

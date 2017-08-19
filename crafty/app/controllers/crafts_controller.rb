@@ -13,9 +13,9 @@ class CraftsController < ApplicationController
     @user = User.find(params[:user_id])
     @craft = @user.crafts.build(craft_params)
     if @craft.save
-      redirect_to user_craft_path(current_user, @craft)
+      redirect_to user_craft_path(current_user, @craft), notice: "Craft successfully created!"
     else
-      render new_user_craft_path(current_user)
+      redirect_to new_user_craft_path(current_user), alert: @craft.errors.full_messages.each { |err| err }.join(". ")
     end
   end
 
@@ -30,7 +30,7 @@ class CraftsController < ApplicationController
     if @craft.update(craft_params)
       redirect_to user_craft_path(current_user, @craft)
     else
-      redirect_to edit_user_craft_path(current_user, @craft) #####
+      redirect_to edit_user_craft_path(current_user, @craft), alert: @craft.errors.full_messages.each { |err| err }.join(". ") #####
     end
   end
 
