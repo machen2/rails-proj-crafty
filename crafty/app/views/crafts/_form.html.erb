@@ -1,4 +1,6 @@
-<%= form_for user_crafts_path(current_user) do |f| %>
+
+<%#= form_for(@craft, :url => user_crafts_path(current_user)) do |f| %>
+<%= form_for [user, craft] do |f| %>
   <% if @craft.errors.any? %>
     <div id="error_explanation">
       <h3>The following <%= pluralize(@craft.errors.count, "error") %> have occured:</h3>

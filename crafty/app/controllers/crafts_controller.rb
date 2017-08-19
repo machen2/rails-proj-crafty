@@ -15,20 +15,20 @@ class CraftsController < ApplicationController
     if @craft.save
       redirect_to user_craft_path(current_user, @craft)
     else
-      render new_user_craft_path(current_user, @craft)
+      render new_user_craft_path(current_user)
     end
   end
 
   def edit
-    @craft = Craft.find_by(params[:id])
+    @craft = Craft.find(params[:id])
     redirect_if_not_author
   end
 
   def update
-    @craft = Craft.find_by(params[:id])
+    @craft = Craft.find(params[:id])
     redirect_if_not_author
     if @craft.update(craft_params)
-      redirect_to craft_path(@craft)
+      redirect_to user_craft_path(current_user, @craft)
     else
       redirect_to edit_user_craft_path(current_user, @craft) #####
     end
