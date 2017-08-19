@@ -9,5 +9,9 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy', :as => 'logout'
 
-  resources :crafts, only: [:index, :new, :create, :show, :edit, :update]
+  resources :users, only: [:edit, :update, :show] do
+    resources :crafts, only: [:new, :create, :show, :edit, :update]
+  end
+
+  resources :crafts, only: [:index]
 end
