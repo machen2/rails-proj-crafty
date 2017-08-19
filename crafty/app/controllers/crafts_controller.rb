@@ -28,9 +28,9 @@ class CraftsController < ApplicationController
     @craft = Craft.find(params[:id])
     redirect_if_not_author
     if @craft.update(craft_params)
-      redirect_to user_craft_path(current_user, @craft)
+      redirect_to user_craft_path(current_user, @craft), notice: "Craft successfully updated!"
     else
-      redirect_to edit_user_craft_path(current_user, @craft), alert: @craft.errors.full_messages.each { |err| err }.join(". ") #####
+      redirect_to edit_user_craft_path(current_user, @craft), alert: @craft.errors.full_messages.each { |err| err }.join(". ")
     end
   end
 
