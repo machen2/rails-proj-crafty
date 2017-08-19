@@ -2,8 +2,8 @@
 <hr>
 
 <% @crafts.each do |craft| %>
-  <h3><%= craft.title %> | <%= link_to "View", craft_path(craft) %></h3>
+  <h3><%= craft.title %> | <%= link_to "View", user_craft_path(craft.user, craft) %></h3>
 <% end %><br>
 
 
-<%= link_to "Log Out", logout_path %> | <%= link_to "Create a New Craft", new_craft_path %>
+<%= link_to "Log Out", logout_path %> | <%= link_to "Create a New Craft", new_user_craft_path(current_user) %>

@@ -10,11 +10,12 @@ class CraftsController < ApplicationController
   end
 
   def create
-    @craft = current_user.crafts.new(craft_params)
+    @user = User.find(params[:user_id])
+    @craft = @user.crafts.build(craft_params)
     if @craft.save
-      redirect_to crafts_path
+      redirect_to user_craft_path(current_user, @craft)
     else
-      render new_craft_path
+      render new_user_craft_path(current_user, @craft)
     end
   end
 
@@ -29,7 +30,7 @@ class CraftsController < ApplicationController
     if @craft.update(craft_params)
       redirect_to craft_path(@craft)
     else
-      redirect_to edit_craft_path(@craft) #####
+      redirect_to edit_user_craft_path(current_user, @craft) #####
     end
   end
 

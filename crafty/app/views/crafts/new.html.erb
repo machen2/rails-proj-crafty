@@ -1,4 +1,40 @@
 <h2>Create a New Craft</h2>
 <hr>
 
-<%= render 'crafts/form', craft: @craft %>
+<%#= render 'crafts/form', craft: @craft, current_user: current_user %>
+
+<%= form_for(Craft.new, :url => user_crafts_path(current_user)) do |f| %>
+  <% if @craft.errors.any? %>
+    <div id="error_explanation">
+      <h3>The following <%= pluralize(@craft.errors.count, "error") %> have occured:</h3>
+      <ul>
+        <% @craft.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-fields">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div><br>
+
+  <div class="form-fields">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div><br>
+
+  <div class="form-fields">
+    <%= f.label :difficulty %>
+    <em>(Difficulty must be 'easy', 'medium', or 'hard'.)</em>
+    <%= f.text_field :difficulty %>
+  </div><br>
+
+  <div class="form-fields">
+    <%= f.label :instructions %><br>
+    <%= f.text_area :instructions %>
+  </div><br>
+
+  <%= f.submit "Submit" %>
+<% end %>
