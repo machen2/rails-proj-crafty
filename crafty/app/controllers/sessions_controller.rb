@@ -6,13 +6,25 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(email: params[:email])
-    if @user && @user.authenticate(params[:password])
+    if auth.present?
+      @user = User.find_or_create_by(uid: auth['uid']) do |u|
+        u.name = auth['info']['name']
+        u.email = auth['info']['email']
+        u.password = SecureRandom.hex
+      end
       session[:user_id] = @user.id
-      redirect_to crafts_path
-    else
-      @user.nil? ? (flash[:error] = "Email is Invalid") : (flash[:error] = "Password is Invalid")
-      render "sessions/new"
+      redirect_to crafts_path ##add notice here for successful login
+    end
+
+    if params[:email].present?
+      @user = User.find_by(email: params[:email])
+      if @user && @user.authenticate(params[:password])
+        session[:user_id] = @user.id
+        redirect_to crafts_path ##add notice here for successful login
+      else
+        @user.nil? ? (flash[:error] = "Email is Invalid") : (flash[:error] = "Password is Invalid")
+        render "sessions/new"
+      end
     end
   end
 
@@ -24,4 +36,9 @@ class SessionsController < ApplicationController
       redirect_to login_path
     end
   end
+
+  private
+    def auth
+      request.env['omniauth.auth']
+    end
 end
