@@ -16,7 +16,17 @@
 <p><%= @craft.instructions %></p>
 <br>
 
-<%= link_to "Log Out", logout_path %> | <%= link_to "Home", crafts_path %>
+<% if @craft.tags %>
+<p><strong>Tags: </strong></p>
+  <ul>
+    <% @craft.tags.each do |tag| %>
+      <li><%= tag.name %></li>
+    <% end %>
+  </ul>
+<br>
+<% end %>
+
+<%= link_to "Log Out", logout_path %> | <%= link_to "View All Crafts", crafts_path %>
 
 <% if current_user.id == @craft.user_id %>
   | <%= link_to "Edit", edit_user_craft_path(current_user, @craft) %>

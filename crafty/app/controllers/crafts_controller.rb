@@ -7,6 +7,7 @@ class CraftsController < ApplicationController
 
   def new
     @craft = Craft.new
+    @tags = @craft.tags.build
   end
 
   def create
@@ -40,6 +41,6 @@ class CraftsController < ApplicationController
 
   private
     def craft_params
-      params.require(:craft).permit(:title, :difficulty, :description, :instructions)
+      params.require(:craft).permit(:title, :difficulty, :description, :instructions, :tag_ids => [], :tags_attributes => [:name]) ########
     end
 end
