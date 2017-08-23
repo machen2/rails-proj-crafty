@@ -21,13 +21,14 @@
     <%= f.text_area :instructions %>
   </div><br>
 
-  <div class="form-fields">  <!-- ############################# -->
-    Tags <br>
-    <%= f.fields_for(:tags) do |tag| %>
-      <%= tag.label 'Create a New Tag: ' %>
-      <%= tag.text_field :name %>
-    <% end %>
-    <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br>
+  <div class="form-fields">
+    Add Tags: <br><br>
+    <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br><br>
+
+    <%= f.fields_for(:tags, @craft.tags.build) do |tag_field| %>
+      <%= tag_field.label 'Create a New Tag: ' %>
+      <%= tag_field.text_field :name %>
+    <% end %><br><br>
   </div>
 
   <%= f.submit "Submit" %>

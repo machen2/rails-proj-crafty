@@ -16,7 +16,7 @@
 <p><%= @craft.instructions %></p>
 <br>
 
-<% if @craft.tags %>
+<% if @craft.tags.last %>
 <p><strong>Tags: </strong></p>
   <ul>
     <% @craft.tags.each do |tag| %>
