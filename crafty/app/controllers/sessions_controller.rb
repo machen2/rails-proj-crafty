@@ -13,14 +13,14 @@ class SessionsController < ApplicationController
         u.password = SecureRandom.hex
       end
       session[:user_id] = @user.id
-      redirect_to crafts_path ##add notice here for successful login
+      redirect_to crafts_path, notice: "Successfully logged in!"
     end
 
     if params[:email].present?
       @user = User.find_by(email: params[:email])
       if @user && @user.authenticate(params[:password])
         session[:user_id] = @user.id
-        redirect_to crafts_path ##add notice here for successful login
+        redirect_to crafts_path, notice: "Successfully logged in!"
       else
         @user.nil? ? (flash[:error] = "Email is Invalid") : (flash[:error] = "Password is Invalid")
         render "sessions/new"
@@ -31,7 +31,7 @@ class SessionsController < ApplicationController
   def destroy
     if is_logged_in?
       session.delete(:user_id)
-      redirect_to root_path
+      redirect_to root_path, notice: "Successfully logged out!"
     else
       redirect_to login_path
     end
