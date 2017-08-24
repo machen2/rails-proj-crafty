@@ -1,5 +1,5 @@
 <h2>All Crafts Under: <%= @tag.name %></h2>
 
-<% @tag.crafts.each do |craft| %>
+<% @ordered_crafts.each do |craft| %>
   <p><%= link_to craft.title, user_craft_path(craft.user_id, craft) %><p>
 <% end %>

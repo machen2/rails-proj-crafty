@@ -36,6 +36,7 @@ class CraftsController < ApplicationController
 
   def show
     @craft = Craft.find_by(id: params[:id])
+    @ordered_tags = @craft.tags.sort_by { |f| f['name'].downcase }
   end
 
   private

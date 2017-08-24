@@ -8,5 +8,6 @@ class TagsController < ApplicationController
 
   def show
     @tag = Tag.find(params[:id])
+    @ordered_crafts = @tag.crafts.sort_by { |f| f['title'].upcase}
   end
 end

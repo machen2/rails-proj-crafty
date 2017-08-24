@@ -19,7 +19,7 @@
 <% if @craft.tags.last %>
 <p><strong>Tags: </strong></p>
   <ul>
-    <% @craft.tags.each do |tag| %>
+    <% @ordered_tags.each do |tag| %>
       <li><%= tag.name %></li>
     <% end %>
   </ul>
