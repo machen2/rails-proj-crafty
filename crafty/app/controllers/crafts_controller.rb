@@ -42,6 +42,6 @@ class CraftsController < ApplicationController
 
   private
     def craft_params
-      params.require(:craft).permit(:title, :difficulty, :description, :instructions, :tag_ids => [], :tags_attributes => [:name])
+      params.require(:craft).permit(:title, :difficulty, :description, :instructions, :picture_url, :tag_ids => [], :tags_attributes => [:name])
     end
 end

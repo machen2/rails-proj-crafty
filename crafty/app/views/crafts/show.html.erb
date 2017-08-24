@@ -6,6 +6,11 @@
 
 <h2><%= @craft.title %></h2>
   <hr>
+
+<% if @craft.picture_url %>
+  <%= image_tag @craft.picture_url, width:"500px", height: "350px" %>
+<% end %>
+
 <h3>Author: <%= @craft.user.name %> </h3>
 
 <p><strong>Description: </strong><%= @craft.description %></p>
