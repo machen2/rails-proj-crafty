@@ -1,0 +1,5 @@
+<h2><%= current_user.name %>'s Crafts</h2>
+
+<% @ordered_crafts.each do |craft| %>
+  <p><%= link_to craft.title, user_craft_path(current_user, craft) %></p>
+<% end %>

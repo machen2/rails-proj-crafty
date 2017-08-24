@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     end
 
     def authenticate_user!
-      redirect_to login_path if !is_logged_in? ##CHANGE TO LOGIN PATH
+      redirect_to login_path if !is_logged_in?
     end
 
     def redirect_if_not_author

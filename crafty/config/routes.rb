@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get 'tags/most_popular' => 'tags#most_popular'
 
-  resources :users, only: [:edit, :update, :show] do
+  resources :users, only: [:show] do
     resources :crafts, only: [:new, :create, :show, :edit, :update]
   end
 
