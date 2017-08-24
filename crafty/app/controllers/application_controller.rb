@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
 
     def redirect_if_not_author
       if current_user.id != @craft.user_id
-        redirect_to crafts_path
+        redirect_to crafts_path, alert: "You do not have access to that page."
       end
     end
 end
