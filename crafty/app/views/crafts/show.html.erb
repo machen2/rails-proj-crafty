@@ -25,7 +25,7 @@
 <p><strong>Tags: </strong></p>
   <ul>
     <% @ordered_tags.each do |tag| %>
-      <li><%= tag.name %></li>
+      <li><%= link_to tag.name, tag_path(tag) %></li>
     <% end %>
   </ul>
 <br>
