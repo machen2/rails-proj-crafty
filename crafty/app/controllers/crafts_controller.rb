@@ -3,6 +3,7 @@ class CraftsController < ApplicationController
 
   def index
     @crafts = Craft.all
+    @ordered_crafts = @crafts.sort_by { |f| f['title'].upcase }
   end
 
   def new

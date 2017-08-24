@@ -7,7 +7,7 @@
 <h2>All Crafts</h2>
 <hr>
 
-<% @crafts.each do |craft| %>
+<% @ordered_crafts.each do |craft| %>
   <h3><%= craft.title %> | <%= link_to "View", user_craft_path(craft.user, craft) %></h3>
 <% end %><br>
 
