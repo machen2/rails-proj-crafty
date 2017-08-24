@@ -4,7 +4,6 @@ class RegistrationsController < ApplicationController
       redirect_to crafts_path
     end
     @user = User.new
-    #load a form for a User object
   end
 
   def create

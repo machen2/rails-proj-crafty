@@ -1,9 +1,7 @@
 <h1>Login</h1>
 <hr>
 
-<% if flash[:error] %>
-    <p style="color:red"><%= flash[:error] %></p>
-<% end %>
+<%= render '/layouts/alerts' %>
 
 <%= form_tag('/login') do %>
   <div class="form-fields">

@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to crafts_path, notice: "Successfully logged in!"
     else
-      @user.nil? ? (flash[:error] = "Email is Invalid") : (flash[:error] = "Password is Invalid")
+      @user.nil? ? (flash[:alert] = "Email is Invalid") : (flash[:alert] = "Password is Invalid")
       render "sessions/new"
     end
   end
