@@ -7,7 +7,7 @@
   <%= image_tag @craft.picture_url, width:"500px", height: "350px" %>
 <% end %>
 
-<h3>Author: <%= @craft.user.name %> </h3>
+<h3>Author: <%= link_to  @craft.user.name, user_path(@craft.user) %> </h3>
 
 <p><strong>Description: </strong><%= @craft.description %></p>
 
