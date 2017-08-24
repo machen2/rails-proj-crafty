@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback' => 'sessions#create'
   get '/logout' => 'sessions#destroy', :as => 'logout'
 
+  get 'tags/most_popular' => 'tags#most_popular'
+
   resources :users, only: [:edit, :update, :show] do
     resources :crafts, only: [:new, :create, :show, :edit, :update]
   end

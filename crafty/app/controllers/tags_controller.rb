@@ -6,6 +6,10 @@ class TagsController < ApplicationController
     @ordered = @tags.sort_by { |f| f['name'].downcase }
   end
 
+  def most_popular
+    @most_popular = Tag.most_popular_tags
+  end
+
   def show
     @tag = Tag.find(params[:id])
     @ordered_crafts = @tag.crafts.sort_by { |f| f['title'].upcase}
