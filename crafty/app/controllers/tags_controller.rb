@@ -8,6 +8,7 @@ class TagsController < ApplicationController
 
   def most_popular
     @most_popular = Tag.most_popular_tags
+    @ordered_tags = @most_popular.sort_by { |f| f['name'].upcase}
   end
 
   def show

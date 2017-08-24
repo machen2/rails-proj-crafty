@@ -1,6 +1,6 @@
 <h2>Most Popular Tags</h2>
-<h4>(The tags with the most number of crafts.)</h4>
+<h4>(The tags with the most number of crafts!)</h4>
 
-<% @most_popular.each do |popular| %>
-  <p><%= popular.name %></p>
+<% @ordered_tags.each do |tag| %>
+  <p><%= link_to tag.name, tag_path(tag) %> (<%= tag.crafts.count %>)</p>
 <% end %>
