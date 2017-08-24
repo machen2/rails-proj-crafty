@@ -7,7 +7,7 @@
 <h2><%= @craft.title %></h2>
   <hr>
 
-<% if @craft.picture_url %>
+<% if @craft.picture_url && !@craft.picture_url.blank?%>
   <%= image_tag @craft.picture_url, width:"500px", height: "350px" %>
 <% end %>
 

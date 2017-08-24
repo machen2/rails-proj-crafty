@@ -15,7 +15,7 @@ Specs:
 - [x] Include third party signup/login (how e.g. Devise/OmniAuth) -- Omniauth through Facebook
 - [x] Include nested resource show or index (URL e.g. users/2/recipes) -- users/:id/crafts/:id (show)
 - [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients) -- users/:id/crafts/new
-- [ ] Include form display of validation errors (form URL e.g. /recipes/new) --Login, Signup, Craft New, Craft Edit
+- [x] Include form display of validation errors (form URL e.g. /recipes/new) --Login, Signup, Craft New, Craft Edit
 
 Confirm:
 - [ ] The application is pretty DRY
