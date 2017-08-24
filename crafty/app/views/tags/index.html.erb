@@ -2,6 +2,6 @@
 
 <h4>All Tags:</h4>
 
-<% @tags.each do |tag| %>
-  <p><%= tag.name %></p>
+<% @ordered.each do |tag| %>
+  <p><%= link_to tag.name, tag_path(tag) %> (<%= tag.crafts.count %>)</p>
 <% end %>
