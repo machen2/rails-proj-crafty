@@ -22,7 +22,7 @@
   </div><br>
 
   <div class="form-fields">
-    Add Tags: <br><br>
+    Tags: <br><br>
     <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br><br>
 
     <%= f.fields_for(:tags, @craft.tags.build) do |tag_field| %>

@@ -8,8 +8,8 @@ class Craft < ApplicationRecord
 
   def tags_attributes=(tags_attributes)
     tags_attributes.values.each do |tag_attributes|
-     tag = Tag.find_or_create_by(tag_attributes)
-     tags << tag if tag.persisted? && !tag.name.blank?
+      tag = Tag.find_or_create_by(tag_attributes)
+      tags << tag if tag.persisted? && !tag.name.blank? && !tags.include?(tag)
    end
   end
 end
