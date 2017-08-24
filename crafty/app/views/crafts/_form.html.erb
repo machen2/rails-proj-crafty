@@ -18,7 +18,7 @@
 
   <div class="form-fields">
     <%= f.label :picture_url %>
-    <%= f.text_field :picture_url %>
+    <%= f.text_field :picture_url, placeholder: "(optional)" %>
   </div><br>
 
   <div class="form-fields">
@@ -32,7 +32,7 @@
 
     <%= f.fields_for(:tags, @craft.tags.build) do |tag_field| %>
       <%= tag_field.label 'Create a New Tag: ' %>
-      <%= tag_field.text_field :name %>
+      <%= tag_field.text_field :name, placeholder: "(optional)" %>
     <% end %><br><br>
   </div>
 

@@ -16,15 +16,13 @@ class SessionsController < ApplicationController
       redirect_to crafts_path, notice: "Successfully logged in!"
     end
 
-    if params[:email].present?
-      @user = User.find_by(email: params[:email])
-      if @user && @user.authenticate(params[:password])
-        session[:user_id] = @user.id
-        redirect_to crafts_path, notice: "Successfully logged in!"
-      else
-        @user.nil? ? (flash[:error] = "Email is Invalid") : (flash[:error] = "Password is Invalid")
-        render "sessions/new"
-      end
+    @user = User.find_by(email: params[:email])
+    if @user && @user.authenticate(params[:password])
+      session[:user_id] = @user.id
+      redirect_to crafts_path, notice: "Successfully logged in!"
+    else
+      @user.nil? ? (flash[:error] = "Email is Invalid") : (flash[:error] = "Password is Invalid")
+      render "sessions/new"
     end
   end
 

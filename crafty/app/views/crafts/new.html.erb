@@ -1,10 +1,6 @@
 <h2>Create a New Craft</h2>
 <hr>
 
-<% if alert %>
-  <div id="notice" class="alert">
-    <p class="alert" style="color:red"><%= alert %></p>
-  </div>
-<% end %>
+<%= render 'crafts/alerts' %>
 
 <%= render 'crafts/form', craft: @craft, user: current_user %>
