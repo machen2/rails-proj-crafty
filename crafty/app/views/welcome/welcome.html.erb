@@ -1,10 +1,11 @@
 <%= render '/layouts/notices' %>
-
-<h1>Welcome to Crafty</h1>
-<p>The app that allows you to manage your arts and crafts and view others!</p>
-<hr>
-<p>
-  <button class="btn"><%= link_to "Signup", signup_path %></button>
-  <button class="btn"><%= link_to "Login", login_path %></button>
-  <button class="btn"><%= link_to('Login via Facebook', '/auth/facebook') %></button>
-</p>
+<div class="jumbotron text-center">
+  <h1>Welcome to Crafty</h1>
+  <p>The app that allows you to manage your arts and crafts and share with others!</p>
+  <hr>
+  <p>
+    <button class="btn"><%= link_to "Signup", signup_path %></button>
+    <button class="btn"><%= link_to "Login", login_path %></button>
+    <button class="btn"><%= link_to('Login via Facebook', '/auth/facebook') %></button>
+  </p>
+</div>

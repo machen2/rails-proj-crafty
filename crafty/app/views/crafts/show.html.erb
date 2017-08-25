@@ -4,7 +4,7 @@
   <hr>
 
 <% if @craft.picture_url && !@craft.picture_url.blank?%>
-  <%= image_tag @craft.picture_url, width:"500px", height: "350px" %>
+  <%= image_tag @craft.picture_url, width:"500px", height: "400px" %>
 <% end %>
 
 <h3>Author: <%= link_to  @craft.user.name, user_path(@craft.user) %> </h3>

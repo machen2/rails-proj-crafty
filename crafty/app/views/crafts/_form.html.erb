@@ -28,6 +28,7 @@
 
   <div class="form-fields">
     Tags: <br><br>
+
     <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br><br>
 
     <%= f.fields_for(:tags, @craft.tags.build) do |tag_field| %>
