@@ -4,3 +4,6 @@
 <%= render 'layouts/alerts' %>
 
 <%= render 'crafts/form', craft: @craft, user: current_user %>
+
+<br>
+<%= link_to "Cancel", user_craft_path(current_user, @craft) %>
