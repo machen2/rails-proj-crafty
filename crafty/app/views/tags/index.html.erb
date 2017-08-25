@@ -6,6 +6,3 @@
 <% @ordered.each do |tag| %>
   <p><%= link_to tag.name, tag_path(tag) %> (<%= tag.crafts.count %>)</p>
 <% end %>
-
-<br>
-<%= link_to "Log Out", logout_path %> | <%= link_to "Most Popular Tag", tags_most_popular_path %> | <%= link_to "View All Crafts", crafts_path %> | <%= link_to "View My Crafts", user_path(current_user) %>

@@ -4,6 +4,3 @@
 <% @ordered_crafts.each do |craft| %>
   <p><%= link_to craft.title, user_craft_path(craft.user_id, craft) %><p>
 <% end %>
-
-<br>
-<%= link_to "Log Out", logout_path %> | <%= link_to "Most Popular Tag", tags_most_popular_path %> | <%= link_to "View All Tags", tags_path %> | <%= link_to "View All Crafts", crafts_path %> | <%= link_to "View My Crafts", user_path(current_user) %>
