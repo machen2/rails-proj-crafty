@@ -28,5 +28,5 @@
 <% end %>
 
 <% if current_user.id == @craft.user_id %>
-  <button class="btn"><%= link_to "Edit", edit_user_craft_path(current_user, @craft) %></button>
+  <%= link_to "Edit", edit_user_craft_path(current_user, @craft), class: "btn btn-primary" %>
 <% end %>

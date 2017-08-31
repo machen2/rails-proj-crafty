@@ -4,8 +4,8 @@
   <p>The app that allows you to manage your arts and crafts and share with others!</p>
   <hr>
   <p>
-    <button class="btn"><%= link_to "Signup", signup_path %></button>
-    <button class="btn"><%= link_to "Login", login_path %></button>
-    <button class="btn"><%= link_to('Login via Facebook', '/auth/facebook') %></button>
+    <%= link_to "Signup", signup_path, class: "btn btn-primary" %>
+    <%= link_to "Login", login_path, class: "btn btn-primary" %>
+    <%= link_to 'Login via Facebook', '/auth/facebook', class: "btn btn-primary"%>
   </p>
 </div>
