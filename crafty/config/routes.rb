@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     resources :crafts, only: [:new, :create, :show, :edit, :update]
   end
 
+  get '/users' => 'users#index'
+
   resources :crafts, only: [:index]
   resources :tags, except: [:destroy]
 end

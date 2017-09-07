@@ -7,6 +7,7 @@ class Craft < ApplicationRecord
   validates :difficulty, inclusion: { in: %w(easy medium hard), message: "%{value} is not a valid difficulty" }
 
   def tags_attributes=(tags_attributes)
+
     tags_attributes.values.each do |tag_attributes|
       if !tag_attributes[:name].strip.empty?
         tag_name = tag_attributes[:name].downcase
