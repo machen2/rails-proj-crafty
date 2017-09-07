@@ -1,5 +1,6 @@
 <h2>All Users</h2>
+<hr>
 
-<% @users.each do |user| %>
-  <p><%= link_to user.name, user_path(user) %> (<%= pluralize(user.crafts.count, "Craft") %>)</p>
+<% @ordered_users.each do |user| %>
+  <p><%= link_to user.name, user_path(user) %> (<%= pluralize(user.crafts.count, "craft") %>)</p>
 <% end %>

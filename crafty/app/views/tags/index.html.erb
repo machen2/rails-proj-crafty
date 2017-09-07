@@ -4,5 +4,5 @@
 <h4>All Tags:</h4>
 
 <% @ordered.each do |tag| %>
-  <p><%= link_to tag.name, tag_path(tag) %> (<%= tag.crafts.count %>)</p>
+  <p><%= link_to tag.name, tag_path(tag) %> (<%= pluralize(tag.crafts.count, "craft") %>)</p>
 <% end %>

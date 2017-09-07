@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @ordered_users = @users.sort_by { |u| u['name'].upcase }
   end
 
   def show
